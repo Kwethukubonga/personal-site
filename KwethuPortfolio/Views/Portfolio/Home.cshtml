@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Left Column: Text -->
+        <div class="col-lg-6">
+            <h1 class="display-4 fw-bold">
+                <span id="typed-text"></span><span class="blinking-cursor">|</span>
+            </h1>
+
+            <p>
+                Welcome to my portfolio... a space to explore my coding journey, the FIRST Robotics Competition, and the projects I'm currently building.
+            </p>
+
+            <!-- Toggle Button -->
+            <button id="darkModeToggle" class="btn btn-outline-dark mt-3">
+                <span id="toggleText">Switch to Pink Mode</span>
+            </button>
+        </div>
+
+        <!-- Right Column: Rectangular Image -->
+        <div class="col-lg-6 text-center mt-4 mt-lg-0">
+            <img src="~/images/kwethu.jpg" alt="Kwethu Kunene" style="max-width: 100%; border-radius: 8px;">
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Typing animation
+        const phrases = [
+            "Hi, my name is Kwethu",
+            "I'm a Robotics Club Mentor",
+            "An aspiring Software Engineer",
+            "A God Fearing Woman",
+            "An Arsenal FC Supporter",
+            "And a Formula 1 Fan",
+            "BTW I love to gym and play paddle"
+        ];
+
+        let currentPhrase = 0;
+        let currentChar = 0;
+        const speed = 80;
+        const delayBetweenPhrases = 1600;
+        const textElement = document.getElementById("typed-text");
+
+        function typePhrase() {
+            if (currentChar < phrases[currentPhrase].length) {
+                textElement.innerHTML += phrases[currentPhrase].charAt(currentChar);
+                currentChar++;
+                setTimeout(typePhrase, speed);
+            } else {
+                setTimeout(erasePhrase, delayBetweenPhrases);
+            }
+        }
+
+        function erasePhrase() {
+            if (currentChar > 0) {
+                textElement.innerHTML = phrases[currentPhrase].substring(0, currentChar - 1);
+                currentChar--;
+                setTimeout(erasePhrase, speed / 2);
+            } else {
+                currentPhrase = (currentPhrase + 1) % phrases.length;
+                setTimeout(typePhrase, speed);
+            }
+        }
+
+        window.onload = typePhrase;
+
+    </script>
+}
+
+
+
+

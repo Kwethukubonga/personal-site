@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KwethuPortfolio</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KwethuPortfolio.styles.css" asp-append-version="true" />
+</head>
+<body class="@ViewData["BodyClass"]">
+    <!-- Body Class for global styling -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Portfolio" asp-action="Home">KwethuKunene</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Portfolio" asp-action="Home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Portfolio" asp-action="Journey">Journey</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Portfolio" asp-action="Projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Portfolio" asp-action="Academics">Academics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Portfolio" asp-action="Contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Only show the button on the Home page -->
+    @if (ViewData["IsHomePage"] != null && (bool)ViewData["IsHomePage"])
+    {
+        <div class="text-center mt-3">
+            <button id="darkModeToggle" class="btn btn-outline-dark">
+                <span id="toggleText">Switch to Pink Mode</span>
+            </button>
+        </div>
+    }
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - KwethuPortfolio - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Pink Mode -->
+    <script>
+        const toggleButton = document.getElementById("darkModeToggle");
+        const toggleText = document.getElementById("toggleText");
+
+        function setPinkMode(isPink) {
+            // Toggle pink-mode class for all pages
+            document.body.classList.toggle("pink-mode", isPink);
+            document.querySelectorAll(".navbar, .card, .btn, .container, .row").forEach(el => {
+                el.classList.toggle("pink-mode", isPink);
+            });
+
+            toggleText.textContent = isPink ? "Switch to Boring Mode" : "Switch to Pink Mode";
+            localStorage.setItem("pinkMode", isPink ? "true" : "false");
+        }
+
+        toggleButton && toggleButton.addEventListener("click", () => {
+            const isPink = !document.body.classList.contains("pink-mode");
+            setPinkMode(isPink);
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const saved = localStorage.getItem("pinkMode") === "true";
+            setPinkMode(saved);
+        });
+    </script>
+
+    <script>
+        const trailDots = [];
+        const maxDots = 15;
+
+        for (let i = 0; i < maxDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('trail-dot');
+            document.body.appendChild(dot);
+            trailDots.push(dot);
+        }
+
+        let mouse = { x: 0, y: 0 };
+
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function animateTrail() {
+            trailDots.forEach((dot, index) => {
+                const next = trailDots[index + 1] || { style: { left: mouse.x + "px", top: mouse.y + "px" } };
+                dot.style.left = (parseFloat(dot.style.left) || 0) + (parseFloat(next.style.left) - parseFloat(dot.style.left || 0)) * 0.3 + 'px';
+                dot.style.top = (parseFloat(dot.style.top) || 0) + (parseFloat(next.style.top) - parseFloat(dot.style.top || 0)) * 0.3 + 'px';
+            });
+            requestAnimationFrame(animateTrail);
+        }
+
+        animateTrail();
+    </script>
+
+
+</body>
+</html>
+
+

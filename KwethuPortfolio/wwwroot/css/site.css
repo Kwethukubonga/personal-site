@@ -1,0 +1,123 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.text-deepblue {
+    color: #1c2e4a; /* Deep navy tone */
+}
+
+.blinking-cursor {
+    font-weight: bold;
+    color: #333;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blinking-cursor {
+    font-weight: bold;
+    color: #222;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+/* Pink Mode Styling */
+.pink-mode {
+    background-color: #fbeaec !important;
+    color: #4a2c2a !important;
+}
+
+    .pink-mode .navbar {
+        background-color: #f6d6d8 !important;
+    }
+
+    .pink-mode .card {
+        background-color: #fceff1 !important;
+        border-color: #eac4c7 !important;
+    }
+
+    .pink-mode .btn {
+        background-color: #e2aeb1 !important;
+        border-color: #d89ba0 !important;
+        color: white !important;
+    }
+
+    .pink-mode a {
+        color: #c85c72 !important;
+    }
+
+    .pink-mode h1,
+    .pink-mode h2,
+    .pink-mode h3 {
+        color: #4a2c2a !important;
+    }
+
+
+.navbar-brand,
+.nav-link {
+    color: #a14c58 !important; /* deep pink text */
+    font-weight: 600;
+}
+
+
+.nav-link:hover {
+    color: #7c3744 !important; /* even deeper pink */
+}
+
+.trail-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #a14c58; /* darker dusty pink */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.7;
+    transition: all 0.1s ease-out;
+}
+
+
+
+
+
+
+
