@@ -1,50 +1,44 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+/* Default Focus Styles */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Default (White Mode) Colors */
+.navbar-brand,
+.nav-link {
+    color: #1c2e4a; /* deep navy for white mode */
+    font-weight: 600;
+}
+
+    .nav-link:hover {
+        color: #0f1b2e;
+    }
 
 .text-deepblue {
-    color: #1c2e4a; /* Deep navy tone */
+    color: #1c2e4a;
 }
 
-.blinking-cursor {
-    font-weight: bold;
-    color: #333;
-    animation: blink 0.8s infinite;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
+/* Blinking Cursor Animation */
 .blinking-cursor {
     font-weight: bold;
     color: #222;
@@ -60,6 +54,7 @@ body {
         opacity: 0;
     }
 }
+
 /* Pink Mode Styling */
 .pink-mode {
     background-color: #fbeaec !important;
@@ -91,23 +86,22 @@ body {
         color: #4a2c2a !important;
     }
 
+    .pink-mode .navbar-brand,
+    .pink-mode .nav-link {
+        color: #a14c58 !important; /* deep pink */
+        font-weight: 600;
+    }
 
-.navbar-brand,
-.nav-link {
-    color: #a14c58 !important; /* deep pink text */
-    font-weight: 600;
-}
+        .pink-mode .nav-link:hover {
+            color: #7c3744 !important; /* even deeper pink */
+        }
 
-
-.nav-link:hover {
-    color: #7c3744 !important; /* even deeper pink */
-}
-
+/* Default (White Mode) Cursor Trail */
 .trail-dot {
     position: fixed;
     width: 8px;
     height: 8px;
-    background-color: #a14c58; /* darker dusty pink */
+    background-color: black; /* or use white: #fff */
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
@@ -115,9 +109,25 @@ body {
     transition: all 0.1s ease-out;
 }
 
+/* Pink Mode Cursor Trail */
+.pink-mode .trail-dot {
+    background-color: #a14c58; /* dusty pink */
+}
+
+.trail-dot {
+    transition: background-color 0.3s ease;
+}
 
 
+/* Carousel Image Styling */
+.carousel-inner {
+    height: 350px;
+}
 
-
-
-
+    .carousel-inner .carousel-item img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0.5rem;
+    }

@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Community Service";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 projects-page">
+    <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold">Community Service</h2>
+        <p class="lead text-muted">To my mom, thank you for showing me how important community service is.</p>
+    </div>
+    </div>
+
+    <div class="row align-items-center">
+        <!-- pics on the left -->
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div id="upliftCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded shadow">
+
+                    <div class="carousel-item active">
+                        <img src="~/images/uplift1.jpg" alt="Uplift Event 1">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="~/images/uplift2.jpg" alt="Uplift Event 2">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="~/images/uplift3.jpg" alt="Uplift Event 3">
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#upliftCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#upliftCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Text on the right -->
+        <div class="col-md-6">
+            <p>
+                Growing up with a mom who always gave back, service wasn’t just something I did, it was something I lived.
+                At 15, I founded <strong>Uplift Foundation</strong> with a simple goal: to give back.
+            </p>
+
+            <p>
+                My first initiative was a Christmas Charity Drive for LIV Village, a home for orphaned and vulnerable children. I went door-to-door in my community, collecting donations. Thanks to their generosity, we gathered books, shoes, clothes, and raised R1500, which went directly to LIV Village.
+            </p>
+            <p>
+                My friends and family helped a lot, we stayed up all night baking and putting together gift bags.
+            </p>
+
+            <p>
+                I also reached out to brands, and they showed up. We served 150 Real Deal pizzas from Debonairs and 150 original glazed doughnuts from Krispy Kreme. It was a day of joy, and community.
+            </p>
+            <p class="text-muted small"><strong>Next Steps:</strong> Officially registering the NPO (Personal due date: 30 May 2025)</p>
+        </div>
+
+
+
+
+    <script>
+        const upliftCarousel = document.querySelector('#upliftCarousel');
+        const carousel = new bootstrap.Carousel(upliftCarousel, {
+            interval: 3000,
+            pause: 'hover',
+            ride: 'carousel'
+        });
+    </script>
+</div>
+
+
+
+

@@ -28,5 +28,9 @@ namespace KwethuPortfolio.Controllers
         {
             return View();
         }
+        public IActionResult Community()
+        {
+            return View();
+        }
     }
 }
