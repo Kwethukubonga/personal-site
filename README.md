@@ -7,12 +7,10 @@ Personal site
 - Showcases academic journey, skills, and current projects.
 
 ## Features
-- Home Page
-- Journey Page
-- Community Page
-- Projects Page
-- Academic Page
-- Contact Me Page
+- Theme Switching between "bright" mode and a lively "pink" mode 
+- Mouse Trail Effect inspired by Brittany Chiang’s aesthetic
+- Image Carousels community service highlights
+- Fully Responsive for mobile, tablet, and desktop
 
 ## Setup Instructions
 Download Visual Studio then download the repository as a ZIP file and extract it to a directory.
