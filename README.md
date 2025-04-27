@@ -1,4 +1,4 @@
-# Kwethukubonga Kunene
+# Kwethukubonga Kunene Portfolio
 Personal site
 
 ## Overview
@@ -7,13 +7,12 @@ Personal site
 - Showcases academic journey, skills, and current projects.
 
 ## Features
-Home Page
-Journey Page
-Community Page
-Projects Page
-Academic Page
-Contact Me Page
-Code with comments for clarity
+- Home Page
+- Journey Page
+- Community Page
+- Projects Page
+- Academic Page
+- Contact Me Page
 
 ## Setup Instructions
 Download Visual Studio then download the repository as a ZIP file and extract it to a directory.
@@ -22,9 +21,9 @@ Download Visual Studio then download the repository as a ZIP file and extract it
 https://kwethukunene-cxdngrcncaezc9h4.southafricanorth-01.azurewebsites.net/
 
 ## Tech Stack
-HTML/CSS
-JavaScript
-C#
-Visual Studio
-Azure Web App
-ASP.NET Core Web App (Model View Controller)
+- HTML/CSS
+- JavaScript
+- C#
+- Visual Studio
+- Azure Web App
+- ASP.NET Core Web App (Model View Controller)
